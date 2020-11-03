@@ -70,9 +70,10 @@ $(document).ready(function () {
   //!Consideriamo i bottoni premuti
 
   $("body").keydown(function (event) {
-    if ((event = "ArrowLeft")) {
+    console.log(event);
+    if (event.key == "ArrowLeft") {
       moveBack();
-    } else if ((event = "ArrowRight")) {
+    } else if (event.key == "ArrowRight") {
       moveOn();
     }
   });
@@ -85,17 +86,11 @@ $(document).ready(function () {
 
     var images = $(this).parent().siblings(".images").children();
 
-    // console.log(images);
-    // console.log(images[1])
-    // console.log(images.length)
-
     for (var i = 0; i < images.length; i++) {
       if (selDot == i) {
         $(images[i]).addClass("active");
-        console.log("sono qui");
       } else {
         $(images[i]).removeClass("active");
-        console.log("sono nell else");
       }
     }
   });
